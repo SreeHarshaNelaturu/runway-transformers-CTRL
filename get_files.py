@@ -33,7 +33,7 @@ MAX_LENGTH = int(10000)  # Hardcoded max length to avoid infinite loop
 
 
 MODEL_CLASSES = {
-    'CTRL': (CTRLLMHeadModel, CTRLTokenizer)
+    'ctrl': (CTRLLMHeadModel, CTRLTokenizer)
 }
 model_class, tokenizer_class = MODEL_CLASSES['ctrl']
 tokenizer = tokenizer_class.from_pretrained('ctrl')
