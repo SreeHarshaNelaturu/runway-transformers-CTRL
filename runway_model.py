@@ -182,7 +182,7 @@ def generate_text(model_opts, inputs):
 
         if raw_text:
            break
-    return text
+    return raw_text + '' + text
 
 
 if __name__ == '__main__':
