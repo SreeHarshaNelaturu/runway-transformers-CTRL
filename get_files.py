@@ -24,8 +24,8 @@ from tqdm import trange
 import torch
 import torch.nn.functional as F
 import numpy as np
-from transformers import TransfoXLConfig
-from transformers import TransfoXLLMHeadModel, TransfoXLTokenizer
+from transformers import CTRLConfig
+from transformers import CTRLLMHeadModel, CTRLTokenizer
 from runway.data_types import *
 import runway
 
@@ -33,8 +33,8 @@ MAX_LENGTH = int(10000)  # Hardcoded max length to avoid infinite loop
 
 
 MODEL_CLASSES = {
-    'TransfoXL': (TransfoXLLMHeadModel, TransfoXLTokenizer)
+    'CTRL': (CTRLLMHeadModel, CTRLTokenizer)
 }
-model_class, tokenizer_class = MODEL_CLASSES['TransfoXL']
-tokenizer = tokenizer_class.from_pretrained('transfo-xl-wt103')
-model = model_class.from_pretrained('transfo-xl-wt103')
+model_class, tokenizer_class = MODEL_CLASSES['ctrl']
+tokenizer = tokenizer_class.from_pretrained('ctrl')
+model = model_class.from_pretrained('ctrl')
