@@ -145,7 +145,7 @@ def generate_text(model_opts, inputs):
     top_k = 0
     top_p = 0.9
     
-    stop_token = 'None'
+    stop_token = None
     
     if length < 0 and model.config.max_position_embeddings > 0:
         length = model.config.max_position_embeddings
