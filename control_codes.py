@@ -1,8 +1,8 @@
 CONTROL_CODES = {
-    "Questions": 456
+    "Questions": 456,
     "Funny": 58917,
     "Gaming": 40358,
-    "Movies": 46273,,
+    "Movies": 46273,
     "Science": 2090,
     "Politics": 16360,
     "Technologies": 32516,

@@ -125,8 +125,11 @@ def setup():
 
 command_inputs = {
     "input_prompt" : text,
-    "control_code" : category(default="Thoughts", choices=list(CONTROL_CODES.keys())), 
-    "length" : number(min=20, default=20, step=1, max=500, description="Output Text Length")}
+    "control_code" : category(default="Politics", choices=list(CONTROL_CODES.keys()), description="Control codes specify domain, subdomain, entities, relationships between entities, dates, and task-specific behavior"), 
+    "length" : number(default=20, step=5, max=500, description="Desired Output Text Length"),
+    "temperature" : number(default=0.7, min=0, max=1, step=0.01,  description="The high temperature sample displays greater linguistic variety, but the low temperature sample is more grammatically correct. CTRL Works better with lower temperature. "),
+    "top_p" : number(default=0.9, min=0, max = 1, step=0.01, description="The cumulative probability of token sequences to sample from. Lower values lead to higher quality but less surprising results.")
+    }
 
 command_outputs = {"generated_text" : text}                         
 
@@ -140,10 +143,10 @@ def generate_text(model_opts, inputs):
 
     length = inputs["length"]
     num_samples = 1
-    temperature = 0.7
+    temperature = inputs["temperature"]
     repetition_penalty = 1.2
     top_k = 0
-    top_p = 0.9
+    top_p = inputs["top_p"]
     
     stop_token = None
     
