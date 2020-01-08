@@ -181,9 +181,11 @@ def generate_text(model_opts, inputs):
         for o in out:
             text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
             text = text[: text.find(stop_token) if stop_token else None]
-        print("Generated")
+        
         if raw_text:
            break
+        
+        
     return raw_text + " " + text
 
 
